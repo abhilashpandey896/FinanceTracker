@@ -6,7 +6,7 @@ class Stock < ApplicationRecord
   where(ticker: ticker_symbol).first
  end
     def self.new_from_lookup(ticker_symbol)
-  StockQuote::Stock.new(api_key: "sk_bd1ba7c90e0c44c2940a73785eceb680")
+  StockQuote::Stock.new(api_key: "pk_997b984c62b843319067a98f316f6f10")
   begin
   looked_up_stock = StockQuote::Stock.quote(ticker_symbol)
   new(name: looked_up_stock.company_name, ticker: looked_up_stock.symbol, last_price: looked_up_stock.latest_price)
